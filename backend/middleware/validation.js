@@ -3,7 +3,7 @@ const Joi = require('joi');
 // validates user registration data
 const validateUser = (data) => {
     const schema = Joi.object({
-        name: Joi.string().min(3).max(60).required(),
+        name: Joi.string().min(20).max(60).required(),
         email: Joi.string().email().required(),
         password: Joi.string().pattern(/^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$/).required(),
         address: Joi.string().max(400).allow(''),

@@ -9,7 +9,7 @@ exports.register = async (req, res) => {
         const { error } = validateUser(req.body);
         if (error) return res.status(400).json({ error: error.details[0].message });
    
-        if (req.body.name.length < 3) return res.status(400).json({ error: 'Name min 3 chars' });
+        if (req.body.name.length < 20) return res.status(400).json({ error: 'Name min 20 chars' });
         const { name, email, password, address, role } = req.body;
         
         const existing = await User.findOne({ where: { email } });
