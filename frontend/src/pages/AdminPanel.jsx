@@ -92,7 +92,7 @@ export default function AdminPanel() {
       {/* add user form */}
       <h2>Add User</h2>
       <form onSubmit={addUser}>
-        <div class="form-group"><input placeholder="Name (3-60)" value={newUser.name} onChange={e=>setNewUser({...newUser, name:e.target.value})} required minLength="3" maxLength="60" /></div>
+        <div class="form-group"><input placeholder="Name (20-60)" value={newUser.name} onChange={e=>setNewUser({...newUser, name:e.target.value})} required minLength="20" maxLength="60" /></div>
         <div class="form-group"><input placeholder="Email" type="email" value={newUser.email} onChange={e=>setNewUser({...newUser, email:e.target.value})} required /></div>
         <div class="form-group"><input placeholder="Password (8-16, upper, special)" value={newUser.password} onChange={e=>setNewUser({...newUser, password:e.target.value})} required pattern="^(?=.*[A-Z])(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,16}$" /></div>
         <div class="form-group"><textarea placeholder="Address max 400" maxLength="400" value={newUser.address} onChange={e=>setNewUser({...newUser, address:e.target.value})} /></div>

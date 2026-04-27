@@ -13,8 +13,8 @@ export default function Register() {
 
   const submit = async (e) => {
     e.preventDefault();
-    if (form.name.length < 3) {
-      setError('Name must be at least 3 characters');
+    if (form.name.length < 20) {
+      setError('Name must be at least 20 characters');
       return;
     }
     try {
@@ -31,9 +31,9 @@ export default function Register() {
       <h1>Create Account</h1>
       <form onSubmit={submit}>
         <div className="form-group">
-          <label>Full Name (3-60 chars)</label>
+          <label>Full Name (20-60 chars)</label>
           <input name="name" onChange={handleChange} required />
-          {form.name && form.name.length < 3 && <small style={{color:'red'}}>Min 3 chars</small>}
+          {form.name && form.name.length < 20 && <small style={{color:'red'}}>Min 20 chars</small>}
         </div>
         <div className="form-group">
           <label>Email</label>
